@@ -1,18 +1,31 @@
 #heart-drop {
-    position: relative;
+    position: absolute;
     top: 80%;
     left: 82%;
 }
 
 #road-to-nw {
-    position: relative;
-    top: 58%;
+    position: absolute;
+    top: 60%;
     left: 91%;
 }
 
 #shapeshifter {
-    position: relative;
-    top: 58%;
+    position: absolute;
+    top: 61.5%;
     left: 90.5%;
 }
+
+#solution {
+    position: absolute;
+    top: 64%;
+    left: 90.5%;
+}
+
+#godfather {
+    position: absolute;
+    top: 40%;
+    left: 22%;
+}
+
 

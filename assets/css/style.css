@@ -2,6 +2,7 @@
     --prob-name: black;
     --easy: rgb(0, 179, 0);
     --intermediate: orange;
+    --hard: red;
 }
 
 body, html {
@@ -11,10 +12,6 @@ body, html {
     display: flex;
     flex-direction: column;
   
-}
-
-h4, p { 
-    margin: 0;
 }
 
 #map-list-container {
@@ -75,10 +72,18 @@ h4, p {
     background-color: rgb(200, 200, 200);
 }
 
+.problem-text {
+    margin: 0;
+}
+
 .easy {
     color: var(--easy)
 }
 
 .intermediate {
     color: var(--intermediate);
+}
+
+.hard {
+    color: var(--hard);
 }
