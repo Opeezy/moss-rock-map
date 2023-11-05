@@ -11,7 +11,9 @@ function filterProblems () {
         for (problem in problems) {
             let p = problems[problem]
             let pName = p.name.toLowerCase()
-            if (pName.includes(input))
+            let pGrade = p.grade.toLowerCase()
+            let pTags = p.tags.toLowerCase()
+            if (pName.includes(input)|| pGrade.includes(input)||pTags.includes(input))
             createCard(p.name, p.grade, p.tags)
         }
     }
