@@ -28,14 +28,17 @@ const easy = ["V0", "V1", "V2", "V3"]
 const intermediate = ["V4", "V5", "V6"]
 const hard = ["V7", "V8", "V9", "V10"]
 
-function createCard (name, grade, tags) {
-    let newCard = document.createElement("div")
+function createCard (name, grade, tags, value) {
+    let newCard = document.createElement("button")
     let nameElement = document.createElement("h4")
     let gradeElement = document.createElement("p")
     let gradeSpan = document.createElement("span")
     let tagElement = document.createElement("p")
 
     newCard.setAttribute("class", "problem-card")
+    newCard.setAttribute("data-bs-toggle", "modal")
+    newCard.setAttribute("data-bs-target", "#staticBackdrop")
+    newCard.setAttribute("value", name)
     nameElement.setAttribute("class", "problem-text")
     gradeElement.setAttribute("class", "problem-text")
     tagElement.setAttribute("class", "problem-text")
@@ -59,6 +62,8 @@ function createCard (name, grade, tags) {
     newCard.appendChild(gradeElement)
     newCard.appendChild(tagElement)
 
+    newCard.onclick = setModal
+
     problemList.appendChild(newCard)
 }
 
@@ -67,11 +72,11 @@ function createDot (top, left, difficulty, value, id) {
     newDot.classList.add("problem")
     newDot.classList.add(difficulty)
     newDot.setAttribute("value", value)
-    newDot.setAttribute("onClick", setModal(value))
     newDot.setAttribute("type", "button")
     newDot.setAttribute("data-bs-toggle", "modal")
     newDot.setAttribute("data-bs-target", "#staticBackdrop")
     newDot.setAttribute("id", id)
+    newDot.onclick = setModal
 
     overlay.appendChild(newDot)
 }
@@ -80,7 +85,7 @@ function reloadList () {
     removeAllChildNodes(problemList)
     for (problem in problems) {
         let p = problems[problem]
-        createCard(p.name, p.grade, p.tags)
+        createCard(p.name, p.grade, p.tags, p.value)
     }
 }
 
@@ -92,10 +97,11 @@ function reloadDots () {
     }
 }
 
-function setModal (value) {
+function setModal () {
+    let value = this.value
     let title = document.getElementById("modal-title")
     title.innerHTML = value
 }
 
-window.onload = reloadList
-window.onload = reloadDots
+window.onload = reloadList()
+window.onload = reloadDots()
