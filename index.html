@@ -30,7 +30,6 @@
                 </ul>
                 <form id="search-form" class="d-flex" role="search">
                   <input onkeyup="filterProblems()" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
               </div>
             </div>
@@ -40,11 +39,28 @@
         <div id="map-container">
             <img src="./assets/img/MAP1 copy.png" id="map">
             <div id="overlay">
-                <div id="heart-drop" class="problem"></div>
-                <div id="road-to-nw" class="problem"></div>
-                <div id="shapeshifter" class="problem"></div>
-                <div id="solution" class="problem"></div>
-                <div id="godfather" class="problem"></div>
+                <button value="Heart Drop" onclick="setModal(this.value)" id="heart-drop" type="button" class="problem" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+                <button value="Road to Nowhere" onclick="setModal(this.value)" id="road-to-nw" type="button" class="problem" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+                <button value="ShapeShifter" onclick="setModal(this.value)" id="shapeshifter" type="button" class="problem" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+                <button value="Solution" onclick="setModal(this.value)" id="solution" type="button" class="problem" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+                <button value="Godfather" onclick="setModal(this.value)" id="godfather" type="button" class="problem" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 id="modal-title" class="modal-title fs-5" id="staticBackdropLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <img src="https://placehold.co/600x400" class="img-fluid" alt="...">
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, fuga cum tenetur autem nisi voluptate et veniam tempore dolore inventore similique repellendus deleniti perspiciatis eligendi laborum? Architecto quia sint aliquam!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
         <aside id="problem-list">

@@ -60,3 +60,7 @@ function reloadList () {
     }
 }
 
+function setModal (value) {
+    let title = document.getElementById("modal-title")
+    title.innerHTML = value
+}
