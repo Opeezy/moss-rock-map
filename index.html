@@ -39,11 +39,6 @@
         <div id="map-container">
             <img src="./assets/img/MAP1 copy.png" id="map">
             <div id="overlay">
-                <button value="Heart Drop" onclick="setModal(this.value)" id="heart-drop" type="button" class="problem easy-dot" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
-                <button value="Road to Nowhere" onclick="setModal(this.value)" id="road-to-nw" type="button" class="problem intermediate-dot" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
-                <button value="ShapeShifter" onclick="setModal(this.value)" id="shapeshifter" type="button" class="problem intermediate-dot" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
-                <button value="Solution" onclick="setModal(this.value)" id="solution" type="button" class="problem intermediate-dot" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
-                <button value="Godfather" onclick="setModal(this.value)" id="godfather" type="button" class="problem hard-dot" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
             </div>
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -70,7 +65,6 @@
     <script src="./src/problems.js"></script>
     <script src="./src/search.js"></script>
     <script>
-      document.onload(reloadList())
     </script>
   </body>
 </html>

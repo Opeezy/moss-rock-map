@@ -51,8 +51,8 @@ body, html {
     border: none;
 }
 
-.problem:hover {
-    background-color: rgb(255, 128, 128);
+.problem-invis {
+    display: none;
 }
 
 #problem-list {
@@ -95,13 +95,32 @@ body, html {
 }
 
 .easy-dot {
-    background-color: var(--easy)
+    background-color: var(--easy);
+    transition: .5s;
+}
+
+.easy-dot:hover {
+    width: 20px;
+    height: 20px;
 }
 
 .intermediate-dot {
     background-color: var(--intermediate);
+    transition: .2s;    
 }
+
+.intermediate-dot:hover {
+    width: 20px;
+    height: 20px;
+}
+
 
 .hard-dot {
     background-color: var(--hard);
+    transition: .5s;
+}
+
+.hard-dot:hover {
+    width: 20px;
+    height: 20px;
 }
