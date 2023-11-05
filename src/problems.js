@@ -1,5 +1,11 @@
 const problemList = document.getElementById("problem-list")
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 const problems = [
     { name: "Heart Drop", grade: "V1", tags: "short, overhang, jugs" },
     { name: "Road to Nowhere", grade: "V6", tags: "technical, powerful" },
@@ -46,7 +52,8 @@ function createCard (name, grade, tags) {
     problemList.appendChild(newCard)
 }
 
-function fillList () {
+function reloadList () {
+    removeAllChildNodes(problemList)
     for (problem in problems) {
         let p = problems[problem]
         createCard(p.name, p.grade, p.tags)
