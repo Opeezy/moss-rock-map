@@ -27,6 +27,7 @@ function createProblems(name, grade, tags, difficulty, id) {
     newCard.setAttribute("data-bs-toggle", "modal")
     newCard.setAttribute("data-bs-target", "#staticBackdrop")
     newCard.setAttribute("tags", elementTags)
+    newCard.setAttribute("value", name)
     nameElement.setAttribute("class", "problem-text")
     gradeElement.setAttribute("class", "problem-text")
     tagElement.setAttribute("class", "problem-text")
@@ -63,6 +64,7 @@ function createProblems(name, grade, tags, difficulty, id) {
     newDot.setAttribute("data-bs-target", "#staticBackdrop")
     newDot.setAttribute("id", id)
     newDot.setAttribute("tags", elementTags)
+    newDot.setAttribute("value", name)
     newDot.onclick = setModal
 
     overlay.appendChild(newDot)
@@ -77,10 +79,57 @@ function reloadProblems () {
     }
 }
 
+function addCarouselImage (image, count) {
+    console.log(`added ${image}`)
+
+    let cActive = document.createElement("div")
+    cActive.classList.add("carousel-item")
+
+    let cImage = document.createElement("img")
+    cImage.classList.add("d-block")
+    cImage.classList.add("w-100")
+    cImage.setAttribute("src", image)
+
+    let indicator = document.createElement("button")
+    indicator.setAttribute("type", "button")
+    indicator.setAttribute("data-bs-target", "#carouselExampleIndicators")
+    indicator.setAttribute("data-bs-slide-to", `${count}`)
+    indicator.setAttribute("aria-current", "true")
+    indicator.setAttribute("aria-label", `Slide ${count+1}`)
+
+    if (count === 0) {
+        cActive.classList.add("active")
+        indicator.classList.add("active")
+    }
+
+    cActive.appendChild(cImage)
+    carousel.appendChild(cActive)
+    carouselIndicators.appendChild(indicator)
+
+}
+
 function setModal () {
     let value = this.value
     let title = document.getElementById("modal-title")
+    let count = 0
+
+    for (problem in problemImages) {
+        let p = problemImages[problem]
+        if (value.toLowerCase() === p.name.toLowerCase()) {
+            for (image in p.images) {
+                let img = p.images[image]
+                addCarouselImage(img, count)
+                count++
+            }
+        }
+    }
+
     title.innerHTML = value
+}
+
+function clearModalImages () {
+    removeAllChildNodes(carouselIndicators)
+    removeAllChildNodes(carousel)
 }
 
 function filterProblems () {
@@ -104,5 +153,14 @@ function filterProblems () {
             dots.classList.toggle("problem-invis")
         } 
        }
+    }
+}
+
+function clearedSearch () {
+    let value = searchBar.value
+    console.log("working")
+    
+    if (value === "") {
+        reloadProblems
     }
 }

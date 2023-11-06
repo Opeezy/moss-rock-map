@@ -29,7 +29,7 @@
                   </li>                   
                 </ul>
                 <form id="search-form" class="d-flex" role="search">
-                  <input onkeyup="filterProblems()" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <input autocomplete="additional-name" onkeyup="filterProblems()" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 </form>
               </div>
             </div>
@@ -45,14 +45,25 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 id="modal-title" class="modal-title fs-5" id="staticBackdropLabel"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button onclick="clearModalImages()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <img src="https://placehold.co/600x400" class="img-fluid" alt="...">
+                  <div id="carouselExampleIndicators" class="carousel slide">
+                    <div id="carousel-indicators" class="carousel-indicators"></div>
+                    <div id="carousel-inner" class="carousel-inner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                   <div class="modal-body">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, fuga cum tenetur autem nisi voluptate et veniam tempore dolore inventore similique repellendus deleniti perspiciatis eligendi laborum? Architecto quia sint aliquam!
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button onclick="clearModalImages()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
