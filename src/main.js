@@ -1,1 +1,1 @@
-document.onload(fillList())
+window.onload = reloadProblems()
