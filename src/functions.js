@@ -112,7 +112,9 @@ function setModal () {
     let value = this.value
     let title = document.getElementById("modal-title")
     let body = document.getElementById("modal-body")
+    body.innerHTML = "..."
     let count = 0
+    console.log(value)
 
     for (problem in problemImages) {
         let p = problemImages[problem]
@@ -143,26 +145,23 @@ function clearModalImages () {
 
 function filterProblems () {
     let input = searchBar.value.toLowerCase()
+    reloadProblems()    
+    
+    for (problem of problemList.children) {
+     let t = problem.getAttribute("tags").toLowerCase()
 
-    if (input === "") {
-        reloadProblems()
-    } else {
-       for (problem of problemList.children) {
-        let t = problem.getAttribute("tags").toLowerCase()
-
-        if (!t.includes(input) && !problem.classList.contains("problem-invis")) {
-            problem.classList.toggle("problem-invis")
-        } 
-       }
-       
-       for (dots of overlay.children) {
-        let d = dots.getAttribute("tags").toLowerCase()
-
-        if (!d.includes(input) && !dots.classList.contains("problem-invis")) {
-            dots.classList.toggle("problem-invis")
-        } 
-       }
+     if (!t.includes(input) && !problem.classList.contains("problem-invis")) {
+         problem.classList.toggle("problem-invis")
+     } 
     }
+    
+    for (dots of overlay.children) {
+     let d = dots.getAttribute("tags").toLowerCase()
+
+     if (!d.includes(input) && !dots.classList.contains("problem-invis")) {
+         dots.classList.toggle("problem-invis")
+     } 
+    }   
 }
 
 function clearedSearch () {
