@@ -1,9 +1,14 @@
+const problemDescriptions = [
+    { name: "heart drop", description: 'A classic V1 located at the first boulder upon entering. Overhang with deep pockets \
+                                        and signiture "heart" hold near the middle. Start at bottom holds in green and use pockets \
+                                        to finish at the jug in red. No top-out.'}
+]
 
 const problemImages = [
-    {name: "heart drop", images: [
+    { name: "heart drop", images: [
         "./assets/img/problems/heart-drop/heart-drop-1.jpg",
         "./assets/img/problems/heart-drop/heart-drop-2.jpg"
-    ]}
+    ] }
 ]
 
 const problems = [

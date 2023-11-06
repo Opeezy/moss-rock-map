@@ -111,6 +111,7 @@ function addCarouselImage (image, count) {
 function setModal () {
     let value = this.value
     let title = document.getElementById("modal-title")
+    let body = document.getElementById("modal-body")
     let count = 0
 
     for (problem in problemImages) {
@@ -121,6 +122,14 @@ function setModal () {
                 addCarouselImage(img, count)
                 count++
             }
+        }
+    }
+
+    for (description in problemDescriptions) {
+        let d = problemDescriptions[description]
+
+        if (value.toLowerCase() === d.name.toLowerCase()) {
+            body.innerHTML = d.description
         }
     }
 
