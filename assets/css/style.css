@@ -54,14 +54,14 @@ body, html {
 #problem-list {
     width: 15%;
     border-left: 5px solid #212529;
-    overflow-y: scroll;
-    display: flex;
+    overflow: scroll;
+    display: block;
     flex-direction: column;
 }
 
 .problem-card {
     width: 100%;
-    height: 15%;
+    height: 100px;
     border: none;
     border-bottom: 4px solid #212529;
     display: flex;

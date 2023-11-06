@@ -16,5 +16,8 @@ const problems = [
     { name: "Road to Nowhere", grade: "V6", tags: ["technical", "powerful"], difficulty: "intermediate-dot", id: "road-to-nw" },
     { name: "Shapeshifter", grade: "V4", tags: ["short", "powerful", "sloper"], difficulty: "intermediate-dot", id: "shapeshifter" },
     { name: "Solution", grade: "V5", tags: ["short", "powerful"], difficulty: "intermediate-dot", id: "solution" },
-    { name: "Godfather", grade: "V10", tags: ["long", "overhang", "technical"], difficulty: "hard-dot", id: "godfather" }
+    { name: "Godfather", grade: "V10", tags: ["long", "overhang", "technical"], difficulty: "hard-dot", id: "godfather" },
+    { name: "Peel It", grade: "V2", tags: ["pending"], difficulty: "easy-dot", id: "peel-it" },
+    { name: "Beef It", grade: "V9", tags: ["pending"], difficulty: "hard-dot", id: "beef-it" },
+    { name: "Snake Eyes", grade: "V2", tags: ["pending"], difficulty: "easy-dot", id: "snake-eyes" }
 ]

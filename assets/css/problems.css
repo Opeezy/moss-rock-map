@@ -28,4 +28,21 @@
     left: 22%;
 }
 
+#peel-it {
+    position: absolute;
+    top: 60%;
+    left: 96%;
+}
+
+#beef-it {
+    position: absolute;
+    top: 60%;
+    left: 94%;
+}
+
+#snake-eyes {
+    position: absolute;
+    top: 91%;
+    left: 82%;
+}
 
